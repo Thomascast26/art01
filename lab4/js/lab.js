@@ -1,9 +1,9 @@
-// Summary. (use period)
-// Description. (use period)
+// Summary. Below you will find our Pseudocode
+// Description. Pseudocoding for an Everyday Task and omputer Task
 // @link   URL
-// @file   This files defines the MyClass class.
-// @author AuthorName.
-// @since  x.x.x
+// @file   This files defines my Pseudocode for Lab 4
+// @author Thomas castillo
+// @since  10/12/2022
 
 //
 // 		Task 1: Pseudocode an Everyday Task
