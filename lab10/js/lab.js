@@ -1,16 +1,39 @@
 /**
  * Author:    Max Schwab & Thomas Castillo
- * Created:   10.31.22
+ * Created:   11.2.22
  *
  * (c) Copyright by Public Domain
  **/
 
- var outputEl = document.getElementById('output');
- var new1El = document.createElement("p");
- new1El.innerHTML = "Hello World";
- var new2El = document.createElement("p");
- new2El.innerHTML = "Happy Fall Everyone";
- outputEl.appendChild(new1El);
- outputEl.appendChild(new2El);
- outputEl.style.backgroundColor = "green";
- document.getElementById("Outline").style.borderStyle = "solid";
+ // function sortUserName sorts a user input and returns it jumbled
+function sortUserName(inputname) {
+   var userName = String(inputname);
+
+   var nameArray = userName.split(" ");
+   newNameArray = [];
+
+   for (var i = 0; i < nameArray.length; i++) {
+     newNameArray[i] = nameArray[i].split('').sort().reverse().join('');
+
+     if (i != nameArray.length){
+       newNameArray[i] = (newNameArray[i] + " ");
+     };
+   };
+
+
+   return newNameArray.sort().reverse().join('').toLowerCase();
+ };
+
+
+ var buttonEl = document.getElementById("my-button");
+
+ var outputEl =document.getElementById('output');
+
+ buttonEl.addEventListener('click', function(){
+   var enterName= document.getElementById("user-name").value;
+   var sortedName = sortUserName(enterName);
+   outputEl.innerHTML=sortedName;
+ })
+
+document.writeln("Oh hey, I've fixed your name: ",
+sortUserName(), "</br>");
