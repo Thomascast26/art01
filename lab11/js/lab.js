@@ -25,12 +25,12 @@ function sortUserName(inputname) {
  };
 
 
- var buttonEl = document.getElementById("myButton");
+ var buttonEl = document.getElementById("my-button");
 
  var outputEl =document.getElementById('output');
 
  buttonEl.addEventListener('click', function(){
-   var enterName= document.getElementById("userName").value;
+   var enterName= document.getElementById("user-name").value;
    var sortedName = sortUserName(enterName);
    outputEl.innerHTML=sortedName;
  })
