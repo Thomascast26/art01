@@ -1,39 +1,31 @@
 /**
  * Author:    Max Schwab & Thomas Castillo
- * Created:   11.2.22
+ * Created:   11.6.22
  *
  * (c) Copyright by Public Domain
  **/
 
- // function sortUserName sorts a user input and returns it jumbled
-function sortUserName(inputname) {
-   var userName = String(inputname);
+// creates buttons under each paragraph section
+$("#challenges").append("<button id = 'challengesButton' class = myButton>Press Me to Change Styles!");
+$("#problems").append("<button id = 'problemsButton' class = myButton>Press Me to Change Styles!");
+$("#results").append("<button id = 'resultsButton' class = myButton>Press Me to Change Styles!");
 
-   var nameArray = userName.split(" ");
-   newNameArray = [];
+// finds parent elements for each button and adds a class if button is pressed
+$("#challengesButton").click(function(){
+  var challengesEl = $("#challengesButton");
+  challengesEl.parent().addClass('special');
+  // removes the button element
+  challengesEl.remove();
+});
 
-   for (var i = 0; i < nameArray.length; i++) {
-     newNameArray[i] = nameArray[i].split('').sort().reverse().join('');
+$("#problemsButton").click(function(){
+  var problemsEl = $("#problemsButton");
+  problemsEl.parent().addClass('special');
+  problemsEl.remove();
+});
 
-     if (i != nameArray.length){
-       newNameArray[i] = (newNameArray[i] + " ");
-     };
-   };
-
-
-   return newNameArray.sort().reverse().join('').toLowerCase();
- };
-
-
- var buttonEl = document.getElementById("my-button");
-
- var outputEl =document.getElementById('output');
-
- buttonEl.addEventListener('click', function(){
-   var enterName= document.getElementById("user-name").value;
-   var sortedName = sortUserName(enterName);
-   outputEl.innerHTML=sortedName;
- })
-
-document.writeln("Oh hey, I've fixed your name: ",
-sortUserName(), "</br>");
+$("#resultsButton").click(function(){
+  var resultsEl = $("#resultsButton");
+  resultsEl.parent().addClass('special');
+  resultsEl.remove();
+});
