@@ -14,3 +14,22 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
+
+.myButton {
+  -webkit-text-fill-color: black;
+}
+
+#output p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#output.cols {
+    -webkit-column-width: 200px; /* Chrome, Safari, Opera */
+    -moz-column-width: 200px; /* Firefox */
+    column-width: 200px;
+}
+
+div#output {
+    border: solid 1px #ccc;
+    padding: 20px;

@@ -1,29 +1,38 @@
 /**
  * Author:    Max Schwab & Thomas Castillo
- * Created:   11.9.22
+ * Created:   11.14.22
  *
  * (c) Copyright by Public Domain
  **/
 
-function sortingHat(str) {
-  var ref = str.length % 4;
-  if (ref == 0) {
-    return "Gryffindor"
-  }
-  else if (ref == 1) {
-    return "Ravenclaw"
-  }
-  else if (ref == 2) {
-    return "Slytherin"
-  }
-  else {
-    return "Hufflepuff"
-  }
+outputEl = document.getElementById("output");
+
+function FizzBuzz() {
+  arr = []
+  for (var i = 1; i <= 200; i++) {
+    var num = ""
+    if (i % 3 == 0){
+      num += "Fizz"
+      }
+    if (i % 5 == 0){
+      num += "Buzz"
+      }
+    if (i % 7 == 0){
+      num += "Boom"
+      }
+    if (num){
+      num = i + " - " + num + "!"
+    } else {
+      num = i
+    }
+   outputToPage(num)
+   }
+};
+
+function outputToPage(str) {
+    newEl = document.createElement("p");
+    newEl.innerHTML = str;
+    outputEl.appendChild(newEl);
 }
 
-$("#button").click(function(){
-  var name = $("#input").val();
-  var house = sortingHat(String(name));
-  text = "<p>The Sorting Hat has sorted you into " + house + "</p>"
-  $("#output").append(text)
-});
+$("#output").html(FizzBuzz())
